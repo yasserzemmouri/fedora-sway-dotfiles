@@ -6,3 +6,9 @@ ofcourse you need to backup your already existing dotfiles.
 
 sway config.
     - you to configure the config for the used apps. please look at the config.
+
+zsh prerequirements
+    - fzf
+    - zoxide
+    - bat
+    - eza
