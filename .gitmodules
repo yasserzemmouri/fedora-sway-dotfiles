@@ -1,0 +1,6 @@
+[submodule "nvim_dotnet10/.config/lazyvim"]
+	path = nvim_dotnet10/.config/lazyvim
+	url = git@github.com:yasserzemmouri/lazyvim.git
+[submodule "nvim_dotnet10/.config/nvim"]
+	path = nvim_dotnet10/.config/nvim
+	url = git@github.com:yasserzemmouri/nvim.git

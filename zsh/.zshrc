@@ -11,6 +11,10 @@ if [[ "$WAYLAND_DISPLAY" ]]; then
     alias clipboard='wl-copy'
 fi
 
+#nvim-configs
+alias v='nvim'
+alias v-dotnet='NVIM_APPNAME=custom_nvims/nvim_dotnet nvim'
+
 # wayland support for kitty
 export KITTY_ENABLE_WAYLAND=1
 
@@ -71,5 +75,7 @@ bindkey '^R' fzf-history-widget
 
 eval "$(starship init zsh)"
 
+# export docker host for podman
+export DOCKER_HOST="unix://run/user/1000/podman/podman.sock"
 # === Reload zsh configuration ===
 alias sz='source ~/.zshrc'

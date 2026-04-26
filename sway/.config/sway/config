@@ -83,6 +83,8 @@ output * bg /usr/share/backgrounds/default.jxl fill
 # keyboard configuration
 input "type:keyboard" {
     xkb_options caps:swapescape
+    repeat_delay 170
+    repeat_rate 40
 }
 
 ### Key bindings
@@ -105,7 +107,23 @@ input "type:keyboard" {
     bindsym $mod+q kill
 
     # Start your launcher
-    bindsym $mod+a exec $menu
+    bindsym $mod exec $menu
+
+    #use flameshot for screenshots
+    bindsym $mod+Print exec flatpak run org.flameshot.Flameshot gui 
+
+# === Rofi & Launcher Shortcuts ===
+# 1. App launcher (all apps via Rofi)
+bindsym $mod+a exec rofi -show drun -show-icons
+# 2. Power menu (lock/logout/shutdown via Rofi)
+bindsym $mod+Escape exec /bin/zsh ~/.config/rofi/powermenu.sh
+# 3. Clipboard history (Rofi + cliphist)
+bindsym $mod+v exec /jin/zsh ~/.local/bin/clipboard.sh
+# 5. Quick global search without opening full terminal (floating window)
+#bindsym $mod+r exec kitty --app-id floating-fzf -e /bin/zsh ~/.local/bin/globalsearch.sh
+
+	# Make fzf window float in Sway
+	for_window [app_id="floating-fzf"] floating enable, resize set width 1200 height 800, move position center
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
